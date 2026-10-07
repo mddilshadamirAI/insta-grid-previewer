@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sunflower Hair & Beauty Salon | Park Street, Kolkata</title>
+
+<meta name="description"
+content="Sunflower Hair and Beauty Salon at Russel Street, Park Street, Kolkata. Professional haircuts, global colouring, highlights, keratin, facials, bridal services, skincare and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   SUNFLOWER HAIR & BEAUTY SALON
+   PREMIUM SINGLE FILE WEBSITE
+========================================================= */
+
+:root{
+    --black:#0d0c0b;
+    --black2:#151311;
+    --cream:#f8f3ea;
+    --cream2:#efe7da;
+    --gold:#d6ad67;
+    --gold2:#f0cf91;
+    --muted:#aaa39a;
+    --white:#ffffff;
+    --border:rgba(255,255,255,.11);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--black);
+    color:var(--cream);
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:#090807;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:opacity .8s ease,visibility .8s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-inner{
+    text-align:center;
+}
+
+.loader-flower{
+    font-size:55px;
+    color:var(--gold);
+    animation:spin 2s linear infinite;
+}
+
+.loader-title{
+    margin-top:15px;
+    font-family:"Playfair Display",serif;
+    letter-spacing:5px;
+    font-size:18px;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+.cursor-glow{
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+        rgba(214,173,103,.12),
+        transparent 65%);
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    z-index:0;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:82px;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    transition:.4s ease;
+}
+
+.navbar.scrolled{
+    background:rgba(13,12,11,.88);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--border);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-flower{
+    font-size:28px;
+    color:var(--gold);
+}
+
+.logo-text{
+    line-height:1;
+}
+
+.logo-main{
+    font-family:"Playfair Display",serif;
+    font-size:22px;
+    letter-spacing:3px;
+}
+
+.logo-sub{
+    font-size:8px;
+    letter-spacing:4px;
+    color:var(--gold);
+    margin-top:5px;
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#d5d0c8;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-btn{
+    padding:12px 20px;
+    border:1px solid var(--gold);
+    color:var(--gold)!important;
+}
+
+.menu{
+    display:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:
+    linear-gradient(90deg,
+        rgba(8,7,6,.97) 0%,
+        rgba(8,7,6,.82) 40%,
+        rgba(8,7,6,.25) 75%,
+        rgba(8,7,6,.55) 100%),
+    url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2200&q=90")
+    center/cover;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        180deg,
+        rgba(0,0,0,.2),
+        transparent 50%,
+        #0d0c0b 100%
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:min(900px,88%);
+    margin-left:8%;
+    padding-top:70px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(60px,9vw,130px);
+    font-weight:400;
+    line-height:.88;
+    letter-spacing:-5px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.hero-description{
+    max-width:570px;
+    margin-top:35px;
+    color:#d0cbc2;
+    font-size:16px;
+    line-height:1.8;
+}
+
+.hero-actions{
+    display:flex;
+    gap:15px;
+    margin-top:38px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 27px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:11px;
+    font-weight:600;
+    transition:.35s;
+    cursor:pointer;
+}
+
+.btn-gold{
+    background:var(--gold);
+    color:#17130d;
+}
+
+.btn-gold:hover{
+    background:var(--gold2);
+    transform:translateY(-4px);
+    box-shadow:0 15px 40px rgba(214,173,103,.2);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.3);
+    color:white;
+}
+
+.btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+    transform:translateY(-4px);
+}
+
+/* Floating 3D sphere */
+
+.hero-orb{
+    position:absolute;
+    right:8%;
+    top:23%;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    background:
+    radial-gradient(circle at 30% 25%,
+        #f3d99d,
+        #b48746 35%,
+        #51381d 65%,
+        #17120c 100%);
+    box-shadow:
+    0 0 70px rgba(214,173,103,.2),
+    inset -30px -30px 60px rgba(0,0,0,.4);
+    opacity:.7;
+    animation:float 6s ease-in-out infinite;
+}
+
+.hero-orb::before{
+    content:"";
+    position:absolute;
+    inset:-25px;
+    border:1px solid rgba(214,173,103,.25);
+    border-radius:50%;
+    transform:rotateX(65deg);
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(0);}
+    50%{transform:translateY(-25px) rotate(8deg);}
+}
+
+.scroll-indicator{
+    position:absolute;
+    bottom:35px;
+    left:8%;
+    z-index:3;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    color:#aaa;
+    font-size:9px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.scroll-line{
+    width:55px;
+    height:1px;
+    background:var(--gold);
+}
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+section{
+    position:relative;
+    padding:120px 7%;
+}
+
+.section-label{
+    color:var(--gold);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.section-title{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(42px,5vw,70px);
+    font-weight:400;
+    line-height:1.05;
+}
+
+.section-title span{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.section-text{
+    color:#aaa39a;
+    line-height:1.9;
+    max-width:650px;
+    margin-top:25px;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro{
+    background:var(--cream);
+    color:#181513;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.intro .section-label{
+    color:#987337;
+}
+
+.intro .section-text{
+    color:#655f57;
+}
+
+.intro-image{
+    height:600px;
+    position:relative;
+    overflow:hidden;
+}
+
+.intro-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.intro-image:hover img{
+    transform:scale(1.06);
+}
+
+.image-frame{
+    position:absolute;
+    inset:20px;
+    border:1px solid rgba(214,173,103,.6);
+    pointer-events:none;
+}
+
+.intro-card{
+    position:absolute;
+    bottom:-1px;
+    right:-1px;
+    background:#11100e;
+    color:white;
+    padding:30px;
+    width:230px;
+}
+
+.intro-card strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:40px;
+    color:var(--gold);
+}
+
+.intro-card small{
+    color:#aaa;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services{
+    background:
+    radial-gradient(circle at 10% 30%,rgba(214,173,103,.06),transparent 25%),
+    #0d0c0b;
+}
+
+.service-grid{
+    margin-top:65px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.service-card{
+    min-height:280px;
+    padding:30px;
+    border:1px solid var(--border);
+    background:linear-gradient(145deg,#181613,#0d0c0b);
+    position:relative;
+    overflow:hidden;
+    transition:.5s;
+    transform-style:preserve-3d;
+}
+
+.service-card:hover{
+    transform:translateY(-12px) rotateX(3deg) rotateY(-3deg);
+    border-color:rgba(214,173,103,.5);
+    box-shadow:0 30px 70px rgba(0,0,0,.4);
+}
+
+.service-number{
+    color:#5e574e;
+    font-size:12px;
+}
+
+.service-icon{
+    font-size:42px;
+    margin-top:45px;
+    filter:grayscale(1);
+}
+
+.service-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:24px;
+    font-weight:400;
+    margin-top:25px;
+}
+
+.service-card p{
+    color:#817a71;
+    font-size:12px;
+    line-height:1.6;
+    margin-top:10px;
+}
+
+.service-glow{
+    position:absolute;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:rgba(214,173,103,.08);
+    filter:blur(30px);
+    right:-30px;
+    bottom:-30px;
+}
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.feature{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,
+        #0d0c0b 10%,
+        rgba(13,12,11,.65),
+        rgba(13,12,11,.1)),
+    url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=2200&q=90")
+    center/cover;
+}
+
+.feature-content{
+    max-width:650px;
+}
+
+.feature h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(45px,6vw,85px);
+    font-weight:400;
+}
+
+.feature h2 span{
+    color:var(--gold);
+}
+
+.feature p{
+    margin-top:25px;
+    line-height:1.8;
+    color:#c3bdb4;
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats{
+    background:var(--cream);
+    color:#181513;
+    padding-top:70px;
+    padding-bottom:70px;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    text-align:center;
+}
+
+.stat{
+    border-right:1px solid #d8cdbd;
+}
+
+.stat:last-child{
+    border:0;
+}
+
+.stat strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:55px;
+    font-weight:400;
+    color:#8c682e;
+}
+
+.stat span{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#70695f;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery{
+    background:#11100f;
+}
+
+.gallery-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+}
+
+.gallery-grid{
+    margin-top:55px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:250px;
+    gap:12px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    position:relative;
+}
+
+.gallery-item:nth-child(1){
+    grid-column:span 2;
+    grid-row:span 2;
+}
+
+.gallery-item:nth-child(4){
+    grid-column:span 2;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+    filter:saturate(.85);
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+    filter:saturate(1.1);
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:end;
+    padding:25px;
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+    opacity:0;
+    transition:.4s;
+}
+
+.gallery-item:hover .gallery-overlay{
+    opacity:1;
+}
+
+.gallery-overlay span{
+    color:var(--gold);
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+/* =========================================================
+   BRIDAL
+========================================================= */
+
+.bridal{
+    background:var(--cream);
+    color:#181513;
+}
+
+.bridal-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:80px;
+    align-items:center;
+}
+
+.bridal-image{
+    height:650px;
+    overflow:hidden;
+}
+
+.bridal-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.bridal .section-label{
+    color:#987337;
+}
+
+.bridal .section-text{
+    color:#665f56;
+}
+
+.bridal-list{
+    margin-top:35px;
+    display:grid;
+    gap:15px;
+}
+
+.bridal-list div{
+    border-bottom:1px solid #d9cdbc;
+    padding-bottom:15px;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+.bridal-list span{
+    color:#977137;
+}
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.reviews{
+    background:#0d0c0b;
+    text-align:center;
+}
+
+.rating{
+    color:var(--gold);
+    font-size:35px;
+    letter-spacing:5px;
+    margin-top:35px;
+}
+
+.rating-text{
+    color:#999;
+    margin-top:10px;
+}
+
+.review-card{
+    max-width:800px;
+    margin:55px auto 0;
+    border:1px solid var(--border);
+    padding:55px;
+    background:#12110f;
+}
+
+.review-quote{
+    font-family:"Playfair Display",serif;
+    font-size:27px;
+    line-height:1.6;
+    color:#ddd5ca;
+}
+
+.review-source{
+    margin-top:30px;
+    font-size:10px;
+    color:var(--gold);
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location{
+    background:#151311;
+}
+
+.location-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.location-card{
+    margin-top:40px;
+    display:grid;
+    gap:20px;
+}
+
+.location-row{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--border);
+}
+
+.location-icon{
+    font-size:22px;
+    color:var(--gold);
+}
+
+.location-row strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.location-row span{
+    color:#938c83;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.map{
+    min-height:470px;
+    border:1px solid var(--border);
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(rgba(20,18,15,.5),rgba(20,18,15,.8)),
+    url("https://maps.googleapis.com/maps/api/staticmap?center=Russel+Street,+Kolkata&zoom=15&size=1000x700")
+    center/cover;
+}
+
+.map::before{
+    content:"";
+    position:absolute;
+    inset:20px;
+    border:1px solid rgba(214,173,103,.3);
+}
+
+.map-pin{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.pin{
+    font-size:40px;
+}
+
+.map-pin strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:20px;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    padding:150px 7%;
+    text-align:center;
+    background:
+    radial-gradient(circle at center,
+        rgba(214,173,103,.12),
+        transparent 40%),
+    #0b0a09;
+}
+
+.cta h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(50px,8vw,100px);
+    font-weight:400;
+    line-height:.95;
+}
+
+.cta h2 span{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.cta p{
+    color:#99928a;
+    margin:30px auto;
+    max-width:550px;
+    line-height:1.7;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#080706;
+    border-top:1px solid var(--border);
+    padding:60px 7% 30px;
+}
+
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.footer-brand{
+    max-width:350px;
+}
+
+.footer-brand p{
+    color:#777168;
+    font-size:13px;
+    line-height:1.7;
+    margin-top:20px;
+}
+
+.footer-links{
+    display:flex;
+    gap:60px;
+}
+
+.footer-column h4{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.footer-column a{
+    display:block;
+    color:#888179;
+    font-size:12px;
+    margin-bottom:12px;
+    transition:.3s;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid var(--border);
+    margin-top:50px;
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    color:#55504a;
+    font-size:10px;
+}
+
+/* =========================================================
+   FLOATING BUTTONS
+========================================================= */
+
+.floating-actions{
+    position:fixed;
+    right:20px;
+    bottom:25px;
+    z-index:900;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.float-btn{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#171512;
+    border:1px solid rgba(214,173,103,.4);
+    color:var(--gold);
+    font-size:19px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    transition:.3s;
+}
+
+.float-btn:hover{
+    transform:scale(1.1);
+    background:var(--gold);
+    color:#111;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        position:fixed;
+        top:82px;
+        right:-100%;
+        width:280px;
+        height:calc(100vh - 82px);
+        background:#11100e;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:40px;
+        transition:.4s;
+        border-left:1px solid var(--border);
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-btn{
+        display:none;
+    }
+
+    .hero-orb{
+        width:150px;
+        height:150px;
+        right:4%;
+        top:18%;
+        opacity:.4;
+    }
+
+    .intro-grid,
+    .bridal-grid,
+    .location-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
+    }
+
+    .stat:nth-child(2){
+        border:0;
+    }
+
+    .footer-top{
+        flex-direction:column;
+    }
+
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:85px 5%;
+    }
+
+    .navbar{
+        height:70px;
+        padding:0 5%;
+    }
+
+    .logo-main{
+        font-size:17px;
+    }
+
+    .logo-sub{
+        font-size:6px;
+    }
+
+    .nav-links{
+        top:70px;
+        height:calc(100vh - 70px);
+    }
+
+    .hero{
+        min-height:100svh;
+        background-position:62% center;
+    }
+
+    .hero-content{
+        margin-left:5%;
+        width:90%;
+        padding-top:40px;
+    }
+
+    .hero h1{
+        font-size:64px;
+        letter-spacing:-3px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .hero-orb{
+        width:100px;
+        height:100px;
+        top:18%;
+    }
+
+    .scroll-indicator{
+        left:5%;
+    }
+
+    .intro-image,
+    .bridal-image{
+        height:430px;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-card{
+        min-height:240px;
+    }
+
+    .feature{
+        min-height:550px;
+    }
+
+    .gallery-head{
+        display:block;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:170px;
+    }
+
+    .gallery-item:nth-child(1){
+        grid-column:span 2;
+        grid-row:span 2;
+    }
+
+    .gallery-item:nth-child(4){
+        grid-column:span 2;
+    }
+
+    .stats{
+        padding:60px 5%;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat strong{
+        font-size:40px;
+    }
+
+    .review-card{
+        padding:30px 20px;
+    }
+
+    .review-quote{
+        font-size:21px;
+    }
+
+    .map{
+        min-height:350px;
+    }
+
+    .footer-links{
+        gap:35px;
+        flex-wrap:wrap;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div class="loader" id="loader">
+    <div class="loader-inner">
+        <div class="loader-flower">✿</div>
+        <div class="loader-title">SUNFLOWER</div>
+    </div>
+</div>
+
+<!-- CURSOR -->
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAVBAR -->
+
+<header class="navbar" id="navbar">
+
+    <a href="#home" class="logo">
+
+        <div class="logo-flower">✿</div>
+
+        <div class="logo-text">
+            <div class="logo-main">SUNFLOWER</div>
+            <div class="logo-sub">HAIR & BEAUTY SALON</div>
+        </div>
+
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <a class="btn nav-btn" href="tel:06290575304">
+        Call Now
+    </a>
+
+    <div class="menu" id="menu">☰</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">
+            Park Street · Kolkata
+        </div>
+
+        <h1>
+            Beauty<br>
+            <span>Reimagined.</span>
+        </h1>
+
+        <p class="hero-description">
+            Welcome to Sunflower Hair & Beauty Salon — a professional
+            beauty destination where expert hair care, personalized
+            treatments and modern beauty services come together.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="#services" class="btn btn-gold">
+                Explore Services →
+            </a>
+
+            <a href="tel:06290575304" class="btn btn-outline">
+                Call Salon
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-orb"></div>
+
+    <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        Scroll to explore
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="intro" id="about">
+
+    <div class="intro-grid">
+
+        <div class="intro-image reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=90"
+            alt="Premium salon interior">
+
+            <div class="image-frame"></div>
+
+            <div class="intro-card">
+
+                <strong>4.0★</strong>
+
+                <small>
+                    Rated by 156 customers
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="reveal">
+
+            <div class="section-label">
+                The Sunflower Experience
+            </div>
+
+            <h2 class="section-title">
+                Your beauty.<br>
+                Your <span>signature.</span>
+            </h2>
+
+            <p class="section-text">
+                Sunflower Hair & Beauty Salon is a professional beauty
+                salon located in the heart of Park Street, Kolkata.
+                Our services are designed around personal care,
+                professional styling and beautiful results.
+            </p>
+
+            <p class="section-text">
+                From everyday haircuts and styling to advanced hair
+                treatments, skincare, facials and bridal beauty,
+                Sunflower brings multiple beauty experiences together
+                under one roof.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#services" class="btn btn-gold">
+                    Discover Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="section-label reveal">
+        What We Do
+    </div>
+
+    <h2 class="section-title reveal">
+        Signature <span>Services</span>
+    </h2>
+
+    <p class="section-text reveal">
+        Professional beauty treatments designed to help you look
+        confident, refreshed and effortlessly beautiful.
+    </p>
+
+
+    <div class="service-grid">
+
+        <div class="service-card reveal">
+            <span class="service-number">01</span>
+            <div class="service-icon">✂</div>
+            <h3>Haircuts</h3>
+            <p>
+                Professional haircuts tailored to your style,
+                face shape and personal preference.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">02</span>
+            <div class="service-icon">✦</div>
+            <h3>Hair Styling</h3>
+            <p>
+                Blow dry, styling and finishing for polished
+                everyday and occasion-ready looks.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">03</span>
+            <div class="service-icon">◈</div>
+            <h3>Global Colouring</h3>
+            <p>
+                Beautiful global hair colouring designed to
+                transform and refresh your look.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">04</span>
+            <div class="service-icon">✧</div>
+            <h3>Highlights</h3>
+            <p>
+                Add dimension and character with professionally
+                selected hair highlights.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">05</span>
+            <div class="service-icon">〰</div>
+            <h3>Keratin</h3>
+            <p>
+                Keratin services for smoother, softer and more
+                manageable-looking hair.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">06</span>
+            <div class="service-icon">≈</div>
+            <h3>Straightening</h3>
+            <p>
+                Professional straightening services for a sleek
+                and refined appearance.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">07</span>
+            <div class="service-icon">❋</div>
+            <h3>Smoothening</h3>
+            <p>
+                Smoothening treatments for unruly and dry-looking
+                hair.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">08</span>
+            <div class="service-icon">♡</div>
+            <h3>Hair Relaxing</h3>
+            <p>
+                Hair relaxing services focused on smoother and
+                easier-to-manage hair.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">09</span>
+            <div class="service-icon">✿</div>
+            <h3>Facials</h3>
+            <p>
+                Personalized facial treatments for a refreshed
+                and glowing appearance.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">10</span>
+            <div class="service-icon">☼</div>
+            <h3>Skin Care</h3>
+            <p>
+                Beauty and skincare services designed around
+                individual skin needs.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">11</span>
+            <div class="service-icon">◉</div>
+            <h3>Eyebrows & Eyelashes</h3>
+            <p>
+                Eyebrow beautification and eyelash services
+                for a refined finish.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">12</span>
+            <div class="service-icon">❀</div>
+            <h3>Body Waxing</h3>
+            <p>
+                Professional body waxing services for smooth,
+                clean-looking skin.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">13</span>
+            <div class="service-icon">◇</div>
+            <h3>Acne Treatments</h3>
+            <p>
+                Beauty-focused acne treatments and personalized
+                skincare services.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">14</span>
+            <div class="service-icon">♢</div>
+            <h3>Shampoo & Conditioning</h3>
+            <p>
+                Professional hair cleansing and conditioning
+                treatments.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+        <div class="service-card reveal">
+            <span class="service-number">15</span>
+            <div class="service-icon">✦</div>
+            <h3>Bridal Services</h3>
+            <p>
+                Beauty services designed for brides and special
+                occasions.
+            </p>
+            <div class="service-glow"></div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURE -->
+
+<section class="feature">
+
+    <div class="feature-content reveal">
+
+        <div class="section-label">
+            Hair Transformation
+        </div>
+
+        <h2>
+            Smooth.<br>
+            <span>Shine.</span><br>
+            Confidence.
+        </h2>
+
+        <p>
+            Keratin, straightening, relaxing and smoothening
+            services are available for unruly and dry-looking hair,
+            helping create a smoother and more polished appearance.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="tel:06290575304" class="btn btn-gold">
+                Enquire Now
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat reveal">
+            <strong>156+</strong>
+            <span>Reviews</span>
+        </div>
+
+        <div class="stat reveal">
+            <strong>4.0</strong>
+            <span>Customer Rating</span>
+        </div>
+
+        <div class="stat reveal">
+            <strong>15+</strong>
+            <span>Beauty Services</span>
+        </div>
+
+        <div class="stat reveal">
+            <strong>1</strong>
+            <span>Premium Destination</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+    <div class="gallery-head">
+
+        <div>
+
+            <div class="section-label reveal">
+                Visual Experience
+            </div>
+
+            <h2 class="section-title reveal">
+                Inside <span>Sunflower</span>
+            </h2>
+
+        </div>
+
+        <p class="section-text reveal">
+            Replace these images with the salon's actual photos
+            to create a completely personalized gallery.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1400&q=90"
+            alt="Salon">
+
+            <div class="gallery-overlay">
+                <span>SALON EXPERIENCE</span>
+            </div>
+
+        </div>
+
+        <div class="gallery-item reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=90"
+            alt="Hair styling">
+
+            <div class="gallery-overlay">
+                <span>HAIR STYLING</span>
+            </div>
+
+        </div>
+
+        <div class="gallery-item reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=90"
+            alt="Beauty">
+
+            <div class="gallery-overlay">
+                <span>BEAUTY</span>
+            </div>
+
+        </div>
+
+        <div class="gallery-item reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1400&q=90"
+            alt="Beauty treatment">
+
+            <div class="gallery-overlay">
+                <span>BEAUTY CARE</span>
+            </div>
+
+        </div>
+
+        <div class="gallery-item reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=90"
+            alt="Hair salon">
+
+            <div class="gallery-overlay">
+                <span>HAIR CARE</span>
+            </div>
+
+        </div>
+
+        <div class="gallery-item reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=90"
+            alt="Salon interior">
+
+            <div class="gallery-overlay">
+                <span>SUNFLOWER</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BRIDAL -->
+
+<section class="bridal">
+
+    <div class="bridal-grid">
+
+        <div class="bridal-image reveal">
+
+            <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=90"
+            alt="Bridal beauty">
+
+        </div>
+
+        <div class="reveal">
+
+            <div class="section-label">
+                Bridal Beauty
+            </div>
+
+            <h2 class="section-title">
+                Your most<br>
+                <span>beautiful day.</span>
+            </h2>
+
+            <p class="section-text">
+                Get ready for your special occasion with professional
+                bridal beauty services designed to complement your
+                personal style.
+            </p>
+
+            <div class="bridal-list">
+
+                <div>
+                    <span>01</span>
+                    Bridal Beauty Services
+                </div>
+
+                <div>
+                    <span>02</span>
+                    Hair Styling
+                </div>
+
+                <div>
+                    <span>03</span>
+                    Skin & Facial Care
+                </div>
+
+                <div>
+                    <span>04</span>
+                    Occasion-Ready Finishing
+                </div>
+
+            </div>
+
+            <div class="hero-actions">
+
+                <a href="tel:06290575304" class="btn btn-gold">
+                    Call For Bridal Enquiry
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="reviews" id="reviews">
+
+    <div class="section-label reveal">
+        Client Experience
+    </div>
+
+    <h2 class="section-title reveal">
+        Loved by <span>Clients.</span>
+    </h2>
+
+    <div class="rating reveal">
+        ★ ★ ★ ★ ☆
+    </div>
+
+    <div class="rating-text reveal">
+        4.0 out of 5 · 156 Reviews
+    </div>
+
+    <div class="review-card reveal">
+
+        <div class="review-quote">
+            “Professional beauty services in the heart of
+            Park Street, with a wide range of hair and beauty
+            treatments under one roof.”
+        </div>
+
+        <div class="review-source">
+            SUNFLOWER HAIR & BEAUTY SALON
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location" id="contact">
+
+    <div class="location-grid">
+
+        <div>
+
+            <div class="section-label reveal">
+                Visit Sunflower
+            </div>
+
+            <h2 class="section-title reveal">
+                Come in.<br>
+                Leave <span>glowing.</span>
+            </h2>
+
+            <div class="location-card">
+
+                <div class="location-row reveal">
+
+                    <div class="location-icon">⌖</div>
+
+                    <div>
+
+                        <strong>Address</strong>
+
+                        <span>
+                            2, Anandilal Poddar Sarani,<br>
+                            Russel Street, Park Street area,<br>
+                            Kolkata, West Bengal 700071
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="location-row reveal">
+
+                    <div class="location-icon">☎</div>
+
+                    <div>
+
+                        <strong>Phone</strong>
+
+                        <span>
+                            062905 75304
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="location-row reveal">
+
+                    <div class="location-icon">◷</div>
+
+                    <div>
+
+                        <strong>Opening</strong>
+
+                        <span>
+                            Listed as opening from 10:30 AM
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="location-row reveal">
+
+                    <div class="location-icon">✦</div>
+
+                    <div>
+
+                        <strong>Services</strong>
+
+                        <span>
+                            Hair · Beauty · Skin Care · Bridal
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-actions">
+
+                <a
+                href="tel:06290575304"
+                class="btn btn-gold">
+                    Call 062905 75304
+                </a>
+
+                <a
+                href="https://www.google.com/maps/search/?api=1&query=Sunflower+Hair+and+Beauty+Salon+2+Anandilal+Poddar+Sarani+Kolkata+700071"
+                target="_blank"
+                class="btn btn-outline">
+                    Get Directions
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="map reveal">
+
+            <div class="map-pin">
+
+                <div class="pin">⌖</div>
+
+                <strong>Sunflower</strong>
+
+                <span>Park Street · Kolkata</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="section-label reveal">
+        Your Next Look
+    </div>
+
+    <h2 class="reveal">
+        Ready to feel<br>
+        <span>beautiful?</span>
+    </h2>
+
+    <p class="reveal">
+        Discover professional hair, beauty and skincare services
+        at Sunflower Hair & Beauty Salon, Park Street, Kolkata.
+    </p>
+
+    <div class="hero-actions" style="justify-content:center;">
+
+        <a href="tel:06290575304" class="btn btn-gold">
+            Book / Enquire Now
+        </a>
+
+        <a href="#services" class="btn btn-outline">
+            Explore Services
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+
+                <div class="logo-flower">✿</div>
+
+                <div class="logo-text">
+                    <div class="logo-main">SUNFLOWER</div>
+                    <div class="logo-sub">
+                        HAIR & BEAUTY SALON
+                    </div>
+                </div>
+
+            </div>
+
+            <p>
+                Professional hair and beauty salon offering
+                personalized beauty treatments in Park Street,
+                Kolkata.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Contact</h4>
+
+                <a href="tel:06290575304">
+                    062905 75304
+                </a>
+
+                <a href="#contact">
+                    Park Street, Kolkata
+                </a>
+
+                <a
+                href="https://www.google.com/maps/search/?api=1&query=Sunflower+Hair+and+Beauty+Salon+Kolkata"
+                target="_blank">
+                    Directions
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Sunflower Hair & Beauty Salon.
+            All Rights Reserved.
+        </span>
+
+        <span>
+            PARK STREET · KOLKATA
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- FLOATING ACTIONS -->
+
+<div class="floating-actions">
+
+    <a
+    href="tel:06290575304"
+    class="float-btn"
+    title="Call">
+        ☎
+    </a>
+
+    <a
+    href="https://www.google.com/maps/search/?api=1&query=Sunflower+Hair+and+Beauty+Salon+Kolkata"
+    target="_blank"
+    class="float-btn"
+    title="Directions">
+        ⌖
+    </a>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+        document.getElementById("loader").classList.add("hide");
+    },700);
+
+});
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 50){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menu = document.getElementById("menu");
+const navLinks = document.getElementById("navLinks");
+
+menu.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+        navLinks.classList.remove("active");
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer = new IntersectionObserver(
+
+    entries=>{
+
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+document.querySelectorAll(".reveal").forEach(el=>{
+    observer.observe(el);
+});
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+const glow = document.getElementById("cursorGlow");
+
+window.addEventListener("mousemove",(e)=>{
+
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+
+});
+
+
+/* =========================================================
+   3D SERVICE CARDS
+========================================================= */
+
+document.querySelectorAll(".service-card").forEach(card=>{
+
+    card.addEventListener("mousemove",(e)=>{
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX =
+            ((y-centerY)/centerY)*-4;
+
+        const rotateY =
+            ((x-centerX)/centerX)*4;
+
+        card.style.transform =
+            `translateY(-12px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)`;
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform =
+            "translateY(0) rotateX(0) rotateY(0)";
+
+    });
+
+});
+
+
+/* =========================================================
+   SMOOTH ANCHOR OFFSET
+========================================================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+    anchor.addEventListener("click",function(e){
+
+        const target =
+            document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            e.preventDefault();
+
+            const offset = 70;
+
+            const position =
+                target.getBoundingClientRect().top
+                + window.pageYOffset
+                - offset;
+
+            window.scrollTo({
+                top:position,
+                behavior:"smooth"
+            });
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   PARALLAX HERO
+========================================================= */
+
+window.addEventListener("scroll",()=>{
+
+    const hero = document.querySelector(".hero");
+
+    if(window.scrollY < window.innerHeight){
+
+        hero.style.backgroundPositionY =
+            `${window.scrollY * .25}px`;
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
